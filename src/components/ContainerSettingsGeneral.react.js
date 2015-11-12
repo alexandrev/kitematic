@@ -171,13 +171,22 @@ var ContainerSettingsGeneral = React.createClass({
     }
 
     let rename = (
-      <div className="settings-section">
-        <h3>Container Name</h3>
-        <div className="container-name">
-          <input id="input-container-name" type="text" className="line" placeholder="Container Name" defaultValue={this.props.container.Name} onChange={this.handleNameChange} onKeyUp={this.handleNameOnKeyUp}></input>
-          {willBeRenamedAs}
+      <div>
+        <div className="settings-section">
+          <h3>Container Name</h3>
+          <div className="container-name">
+            <input id="input-container-name" type="text" className="line" placeholder="Container Name" defaultValue={this.props.container.Name} onChange={this.handleNameChange} onKeyUp={this.handleNameOnKeyUp}></input>
+            {willBeRenamedAs}
+          </div>
+          {btnSaveName}
         </div>
-        {btnSaveName}
+
+        <div className="settings-section">
+          <h3>Container ID</h3>
+          <div className="container-id">
+            <span id="input-container-id" type="text" className="line" placeholder="Container ID">{this.props.container.Id}</span>
+          </div>
+        </div>
       </div>
     );
 
